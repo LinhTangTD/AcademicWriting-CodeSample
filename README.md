@@ -8,8 +8,8 @@ The paper has been accepted to the 33rd FLAIRS (http://flairs-33.info/) conferen
 
 Repo of the full project: https://github.com/LinhTangTD/artist-recsys-for-twitter-users/
 
-## Code in R is the final research project for my Data Science class, submitting 
-This is a regression model to predict Success Index of Second-Generation Immigrants in the US.
+## Code in R is the final research project for my Data Science class
+This is a LASSO regression model to predict Success Index of Second-Generation Immigrants in the US.
 
 The paper is submitted for review of the USCLAP (https://www.causeweb.org/usproc/usclap) competition. I'm the first author of the paper with my partner, Yesheng Chen from Grinnell College as the co-author. 
 
