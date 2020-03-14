@@ -10,19 +10,13 @@ library(tidyr)
 
 ######################
 #                    #
-#  LOADING DATA      #
+#  DATA CLEANING     #
 #                    #    
 ######################
 
-path = "/Users/MAC/Desktop/STA230/FinalProject"
+path = "/Users/MAC/Downloads/"
 
 da= get(load(paste(path, "20520-0001-Data.rda", sep="/")))
-
-######################
-#                    #
-#  PROCESSING DATA   #
-#                    #    
-######################
 
 # Function to change the string value to numeric value
 strip_num<-function(colmn){
@@ -34,23 +28,23 @@ strip_num<-function(colmn){
 }
 
 # Getting columns from the 1991 survery and selected columns are the ones that we felt represents sucess. Combined them into the predictor1991 dataframe
-    # CASEID - Case Id
-    # V128 - respondent desired job prestige score
-    # V139 - GPA, V148 - Parent SES index
-    # C4 - English Knowledge
-    # C1 - Private school, V28 - Houshold guardians
-    # V30 - Total number household members
-    # V18 - Respondent sex
-    # V22 - Respondent US stay length
-    # V64 - Respondent job preference
-    # V85 - Respodent ever felt discriminated
-    # C14 - Depression,
-    # C16 - Self-esteem,
-    # V61 - Respondent education expectation,
-    # V94 - Hours/day on HW,
-    # V119 - Good grades important to me,
-    # V66 - Reason Father came to US,
-    # V69 - Reason Mom came to US
+# CASEID - Case Id
+# V128 - respondent desired job prestige score
+# V139 - GPA, V148 - Parent SES index
+# C4 - English Knowledge
+# C1 - Private school, V28 - Houshold guardians
+# V30 - Total number household members
+# V18 - Respondent sex
+# V22 - Respondent US stay length
+# V64 - Respondent job preference
+# V85 - Respodent ever felt discriminated
+# C14 - Depression,
+# C16 - Self-esteem,
+# V61 - Respondent education expectation,
+# V94 - Hours/day on HW,
+# V119 - Good grades important to me,
+# V66 - Reason Father came to US,
+# V69 - Reason Mom came to US
 predictor1991<-data.frame(da$CASEID,da$V128,da$V139,da$V148,da$C4,da$C1,da$V28,da$V30,da$V18,da$V22,da$V64,da$V85,da$C14,da$C16,da$V61,da$V94,da$V119,da$V66,da$V69)
 
 # Change factor values into number values, prepare for future traning 
@@ -67,32 +61,32 @@ colnames(predictor1991)<-c("caseId", "desired.job.prestige.score-1991", "GPA","P
 predictor1991<-na.omit(predictor1991)
 
 # Getting columns from the 1995 survery and selected columns are the ones that we felt represents sucess. Combined them into the predictor1991 dataframe
-    # CASEID - Case Id
-    # V228 - Present living situation
-    # V230 - Total number people living w/respondent
-    # V243 - Economic situation/3 year ago,
-    # V324B - Parent divorced/separated past year
-    # V324C - Parent re/married past year
-    # V324D - Parent lost job/past year
-    # V324E - Respondent ill/disabled past year
-    # V324F - Parent died past year
-    # V206 - Gender
-    # V223 - Respodent US Citizenship
-    # V264 - respondent job classification
-    # V211 - Don't feel save at school
-    # V261 - attainable education level
-    # V262 - Paren education preference
-    # V294 - Respondent hour studying
-    # V319 - Good grade importance
-    # C5 - English Knowledge,
-    # C15 - Depression
-    # C17 - Self-esteem
-    # C19 - Familism index
-    # C18 - Family cohesion
-    # V332 - GPA
-    # V337 - Dropped out by 1995
-    # V357 - Percent daily school attendance
-    # C2 - Private school
+# CASEID - Case Id
+# V228 - Present living situation
+# V230 - Total number people living w/respondent
+# V243 - Economic situation/3 year ago,
+# V324B - Parent divorced/separated past year
+# V324C - Parent re/married past year
+# V324D - Parent lost job/past year
+# V324E - Respondent ill/disabled past year
+# V324F - Parent died past year
+# V206 - Gender
+# V223 - Respodent US Citizenship
+# V264 - respondent job classification
+# V211 - Don't feel save at school
+# V261 - attainable education level
+# V262 - Paren education preference
+# V294 - Respondent hour studying
+# V319 - Good grade importance
+# C5 - English Knowledge,
+# C15 - Depression
+# C17 - Self-esteem
+# C19 - Familism index
+# C18 - Family cohesion
+# V332 - GPA
+# V337 - Dropped out by 1995
+# V357 - Percent daily school attendance
+# C2 - Private school
 predictor1995<-data.frame(da$CASEID,da$V228,da$V230,da$V243,da$V324B,da$V324C,da$V324D,da$V324E,da$V324F,da$V206,da$V223,da$V264,
                           da$V211,da$V261,da$V262,da$V294,da$V319,da$C5,da$C15,da$C17,da$C19,da$C18,da$V332,da$V337,da$V357,da$C2)
 
@@ -114,22 +108,22 @@ colnames(predictor1995)<-c("caseId", "Present living situation-1995", "number pe
 predictor1995<-na.omit(predictor1995)
 
 # Getting columns from the 2015 survery and selected columns are the ones that we felt represents sucess. Combined them into the result dataframe
-    # V425 - Residence Own house/aprt
-    # V448E - Disabled or Ill
-    # V407 - Highest school grade/year completed
-    # V411 - Present work situation
-    # V415E - Current job Treiman prestige scores,
-    # V419 - Current occupation satisfaction
-    # V420 - Present income satisfaction
-    # V429A - Respondent speak English well
-    # V429B - Respondent understand English well
-    # V429C - Respondent read English well
-    # V429D - Respondent write English well
-    # V434 - Respodent race/ethnic identity importance
-    # V448L - Respodent detention/jail/prison
-    # V447 - Country feels like home
-    # V449 - Respondent health
-    # V404 - 
+# V425 - Residence Own house/aprt
+# V448E - Disabled or Ill
+# V407 - Highest school grade/year completed
+# V411 - Present work situation
+# V415E - Current job Treiman prestige scores,
+# V419 - Current occupation satisfaction
+# V420 - Present income satisfaction
+# V429A - Respondent speak English well
+# V429B - Respondent understand English well
+# V429C - Respondent read English well
+# V429D - Respondent write English well
+# V434 - Respodent race/ethnic identity importance
+# V448L - Respodent detention/jail/prison
+# V447 - Country feels like home
+# V449 - Respondent health
+# V404 - 
 Res<- data.frame(da$CASEID,if_else(strip_num(da$V425)<2,1,0),if_else(strip_num(da$V448E)==1,0,1),da$V407,da$V411,da$V415E,da$V419,da$V420,da$V429A,da$V429B,da$V429C,da$V429D,da$V434,if_else(strip_num(da$V448L)==1,0,1),da$V447,da$V449,da$V403)
 
 # Change factor values into number values, prepare for future traning 
@@ -209,3 +203,76 @@ result = Final[1:15]
 write.csv(predictors, "predictors.csv", row.names = FALSE)
 write.csv(result, "result.csv", row.names = FALSE)
 write.csv(Final, "cleaned_data.csv", row.names = FALSE)
+
+######################
+#                    #
+#   DATA ANALYSIS    #
+#                    #    
+######################
+
+Final = read_csv(paste(path, "cleaned_data.csv", sep = "/"))
+predictors = read_csv(paste(path, "predictors.csv", sep = "/"))
+result = read_csv(paste(path, "result.csv", sep = "/"))
+
+#### New Data Set ####
+# Removing the result coloumns and kept only the sucess index
+ImmigrantSuccess<-select(Final,-c(1:15))
+colnames(ImmigrantSuccess)<-make.names(names(ImmigrantSuccess))
+
+#### Fitting into models####
+
+#Set the number of repeats and folds on the dataset
+fit.control <- trainControl(method = "repeatedcv", number = 5, repeats = 10,verboseIter = TRUE)
+#Set seeds so that all models starts the same for compairsion purpose in the future
+set.seed(123)
+#Linear Regression model 
+fit.linear <- train(successIndex ~ ., data = ImmigrantSuccess, method = "lm", trControl = fit.control)
+#LASSO model
+X = model.matrix(data = ImmigrantSuccess[,-44], ~ -1 + .) ## Set up the matrix including dummy vars
+y = ImmigrantSuccess$successIndex
+
+lasso <- glmnet(x = X, y = y)
+set.seed(123)
+lams <- expand.grid(alpha = 1, lambda = lasso$lambda)
+fit.lasso <- train(successIndex ~ ., data = ImmigrantSuccess, method = "glmnet", trControl = fit.control, tuneGrid = lams)
+
+#GAM Model
+set.seed(123)
+fit.gam <- train(successIndex ~ ., data = ImmigrantSuccess, method = "gam", trControl = fit.control)
+
+#PCR Model
+set.seed(123)
+fit.pcr <- train(successIndex ~ ., data = ImmigrantSuccess, method = "pcr", trControl = fit.control)
+
+#Summary
+rs<- resamples(list(LM = fit.linear, 
+                    LASSO = fit.lasso,
+                    GAM = fit.gam,
+                    PCR = fit.pcr))
+sumdata<-summary(rs)
+coef(fit.lasso$finalModel, s = fit.lasso$bestTune$lambda)
+
+plot(fit.pcr)
+plot(fit.gam)
+xyplot(rs, what = "BlandAltman", metric = "RMSE", models = c("LM", "LASSO"))
+xyplot(rs, what = "BlandAltman", metric = "RMSE", models = c("GAM", "LASSO"))
+xyplot(rs, what = "BlandAltman", metric = "RMSE", models = c("PCR", "LASSO"))
+## Graph for evaluation 
+# Getting a copy of the data
+RMSEframe<-data.frame(sumdata$statistics$RMSE)
+#Removing the NA, which are all zero
+RMSEframe<-RMSEframe[1:6]
+#Have a column for the model names
+RMSEframe$Model<-rownames(RMSEframe)
+#change the row names to null
+rownames(RMSEframe)<-NULL
+#Reorganize the dataframe into something plotable 
+RMSEframe <- gather(data = RMSEframe, key = Quatile, value = RMSE, `Min.`,`X1st.Qu.`,`Median`,`Mean`,`X3rd.Qu.`,`Max.`)
+
+model_compare <- RMSEframe %>%
+  ggplot(aes(x=Quatile, y=RMSE,color=Model,group = Model)) +
+  geom_line() +
+  geom_point(size=2) +
+  ggtitle("RMSE Model Comparison") 
+
+model_compare
