@@ -1,5 +1,4 @@
-# USC-ICT-Submission
-Coding and Academic Writing Sample
+# Coding and Academic Writing Sample
 
 ## Code in Python is the summer research project during summer 2019 conducted at Grinnell Colllege.
 This project aims at recommending music artists for Twitter Users based on their music tweeting history. This model takes into consideration users' habit of tweeting, context of each tweet and their implicit preferences (via the frequency of tweets).
